@@ -14,12 +14,19 @@ public class UserService {
     @Autowired
     private UserRepository userRepo;
 
-    // listar todos los usuarios
+    /**
+     *  listar todos los usuarios
+     * @return
+     */
     public List<User> getUsers() {
         return userRepo.findAll();
     }
 
-    // Guardar usuario
+    /**
+     *  Guardar usuario
+     * @param user
+     * @return
+     */
     public User save(User user) {
         if (user.getId() != null) {
             return userRepo.save(user);
@@ -34,7 +41,11 @@ public class UserService {
         }
     }
 
-    // validacion de email
+    /**
+     *  validacion de email
+     * @param userEmail
+     * @return
+     */
     public boolean getValidationEmail(String userEmail) {
 
         if (userRepo.getEmail(userEmail).isPresent()) {
@@ -44,7 +55,12 @@ public class UserService {
         }
     }
 
-    // validacion email-contraseña
+    /**
+     *  validacion email-contraseña
+     * @param userEmail
+     * @param userPassword
+     * @return
+     */
 
     public User getValidationCredentials(String userEmail, String userPassword) {
 
@@ -62,8 +78,12 @@ public class UserService {
     }
 
     
-
-    // eliminar registro
+ /**
+  * eliminar registro
+  * @param userId
+  * @return
+  */
+    
     public boolean deleteUser(Integer userId) {
         Boolean aBoolean = getUser(userId).map(usuario -> {
             userRepo.delete(usuario);
@@ -72,12 +92,18 @@ public class UserService {
         return aBoolean;
     }
     
-    //validar por ID
+    /**
+     *   validar por ID
+     */
+  
     public Optional<User> getUser(Integer userid) {
         return userRepo.findById(userid);
     }
 
-    //validar por zona
+    /**
+     * validar por zona
+     * @return
+     */
     public List<User> getUserZone() {
         return userRepo.findAll();
     }

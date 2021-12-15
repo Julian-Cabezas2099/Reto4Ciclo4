@@ -58,7 +58,7 @@ public class OrderController {
 	
 	@GetMapping("/order/date/{fecha}/{id}")
 	public List<Order> getDateAndId( @PathVariable("fecha") String fecha, @PathVariable("id") Integer id) {
-		return orderServ.findIdAndDate(id, fecha);
+		return orderServ.findIdAndDate(id, fecha+"T05:00:00.000+00:00");
 	}
 	
 	@GetMapping("/order/state/{status}/{id}")

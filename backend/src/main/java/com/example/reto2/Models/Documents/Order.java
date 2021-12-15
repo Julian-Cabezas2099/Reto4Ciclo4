@@ -15,7 +15,7 @@ public class Order {
     
     @Id
     private Integer id;
-    private Date registerDay;
+    private String registerDay;
     private String status = PENDING;
     private User salesMan;
     
@@ -47,10 +47,10 @@ public class Order {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public Date getRegisterDay() {
+	public String getRegisterDay() {
 		return registerDay;
 	}
-	public void setRegisterDay(Date registerDay) {
+	public void setRegisterDay(String registerDay) {
 		this.registerDay = registerDay;
 	}
 	public String getStatus() {

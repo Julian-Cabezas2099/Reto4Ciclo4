@@ -38,9 +38,6 @@ public class OrderService {
 			}
 			return order;
 		}
-        
-		
-        
 	}
 	
 	 // listar todos los Orders
@@ -60,17 +57,7 @@ public class OrderService {
     
     //find by fecha y id
     public List<Order> findIdAndDate(Integer id, String registerDay) {
-
-		SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-dd");
-		Date dateOne = new Date();
-
-		try {
-			dateOne = parser.parse(registerDay);
-		} catch (ParseException e) {
-
-			e.printStackTrace();
-		}
-		return orderRepo.findBySalesManIdAndRegisterDay(id, dateOne);
+		return orderRepo.findBySalesManIdAndRegisterDay(id, registerDay);
     }
     
     //find by status y id

@@ -17,7 +17,7 @@ public interface OrderRepository extends MongoRepository<Order, Integer>{
 	
 	public List<Order> findBySalesManIdAndStatus(Integer id, String status);
 	
-	public List<Order> findBySalesManIdAndRegisterDay(Integer id, Date registerDay);
+	public List<Order> findBySalesManIdAndRegisterDay(Integer id, String registerDay);
 	
 	public List<Order> findBySalesManId(Integer id);
 }

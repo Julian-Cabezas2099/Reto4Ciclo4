@@ -26,8 +26,8 @@ public class Reto2Application  implements CommandLineRunner{
 	@Override
     public void run(String... args) throws Exception {
        /* interfaceChocolate.deleteAll();
-        interfaceUser.deleteAll();
-        interfaceOrder.deleteAll();*/
+        interfaceUser.deleteAll();*/
+        interfaceOrder.deleteAll();
     }
 
 }
